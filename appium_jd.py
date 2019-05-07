@@ -1,7 +1,6 @@
 #!usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Date: 2019/5
-# 功能：爬取京东商品信息，评论信息
+# 功能：爬取商品信息
 
 from appium import webdriver
 from selenium.webdriver.common.by import By
@@ -38,6 +37,7 @@ class Product():
         self.collection = self.db[MONGODB_COLLECTION]
 
     def enter(self):
+        # 对于不同平台和版本来说，可能不会完全一致
         # 点击欢迎页
         el1 = self.driver.find_element_by_id('com.jingdong.app.mall:id/bnm')
         el1.click()
